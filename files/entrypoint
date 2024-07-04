@@ -57,7 +57,7 @@ if [ ! -f "$userConfFinalPath" ]; then
     if [ -f "$userConfFinalPath" ] && [ "$(wc -l < "$userConfFinalPath")" -gt 0 ]; then
         # Import users from final conf file
         while IFS= read -r user || [[ -n "$user" ]]; do
-            create-sftp-user "$user"
+            #create-sftp-user "$user"
         done < "$userConfFinalPath"
     elif $startSshd; then
         log "FATAL: No users provided!"
