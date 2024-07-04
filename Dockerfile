@@ -17,7 +17,7 @@ RUN apt-get update && \
 COPY files/sshd_config /etc/ssh/sshd_config
 COPY files/create-sftp-user /usr/local/bin/
 COPY files/entrypoint /
-RUN chmod -R ug+rw files/.
+RUN chmod -R ug+rw files
 
 EXPOSE 22
 
