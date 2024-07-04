@@ -11,7 +11,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/* && \
     mkdir -p /var/run/sshd && \
     rm -f /etc/ssh/ssh_host_*key*
-
+RUN apt-get install sudo -y
 RUN chmod -R ug+rw /usr/
 RUN chmod -R ug+rw /var/run/
 
