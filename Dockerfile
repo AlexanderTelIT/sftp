@@ -17,7 +17,7 @@ RUN chmod -R ug+rw /var/run/
 COPY files/sshd_config /etc/ssh/sshd_config
 COPY files/create-sftp-user /usr/local/bin/
 COPY files/entrypoint/ /
-
+COPY files/user.conf /etc/sftp
 
 EXPOSE 22
 
