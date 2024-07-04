@@ -1,6 +1,6 @@
 FROM debian:bullseye
 MAINTAINER Adrian Dvergsdal [atmoz.net]
-USER 0
+USER root
 # Steps done in one RUN layer:
 # - Install packages
 # - OpenSSH needs /var/run/sshd to run
@@ -11,7 +11,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/* && \
     mkdir -p /var/run/sshd && \
     rm -f /etc/ssh/ssh_host_*key*
-RUN apt-get install sudo -y
+
 RUN chmod -R ug+rw /usr/
 RUN chmod -R ug+rw /var/run/
 
@@ -22,5 +22,5 @@ COPY files/user.conf /etc/sftp/users.conf
 
 
 EXPOSE 22
-
+USER root
 CMD /entrypoint
