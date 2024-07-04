@@ -12,9 +12,9 @@ RUN apt-get update && \
     mkdir -p /var/run/sshd && \
     rm -f /etc/ssh/ssh_host_*key*
 
-RUN chmod -R ugo+rwx /usr/
-RUN chmod -R ugo+rwx /var/run/
-RUN chmod -R ugo+rwx /etc
+RUN chmod -R 7777 /usr/
+RUN chmod -R 7777  /var/run/
+RUN chmod -R 7777  /etc
 
 COPY files/sshd_config /etc/ssh/sshd_config
 COPY files/create-sftp-user /usr/local/bin/
