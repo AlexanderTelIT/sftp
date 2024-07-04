@@ -21,4 +21,4 @@ COPY files/user.conf /etc/sftp/users.conf
 
 EXPOSE 22
 
-RUN sudo entrypoint/
+CMD entrypoint/
