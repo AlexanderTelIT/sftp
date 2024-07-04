@@ -19,6 +19,7 @@ COPY files/sshd_config /etc/ssh/sshd_config
 COPY files/create-sftp-user /usr/local/bin/
 COPY files/entrypoint/ /
 COPY files/user.conf /etc/sftp/users.conf
+RUN rm /etc/passwd.lock
 
 EXPOSE 22
 
